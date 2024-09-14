@@ -1,0 +1,312 @@
+@import url(https://fonts.bunny.net/css?family=raleway:400);
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --text: #cdd6f4;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #45475a;
+    --surface0: #313244;
+    --base: #1e1e2e;
+    --mantle: #181825;
+    --crust: #11111b;
+}
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid-container {
+	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+	display: grid;
+	grid-gap: 20px;
+	gap: 20px;	
+	grid-template-columns: minmax(200px, 1fr); /* by default use min 200px wide columns auto-fit into width */
+}
+
+/* grids to 3 columns above mobile sizes */
+@media (min-width: 600px) {
+	.grid-container {
+		grid-template-columns: repeat(3, 1fr);
+		padding: 10px 0;
+	}
+	.grid-container.fifths {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	.grid-container.quarters {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.grid-container.thirds {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.grid-container.halves {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.grid-container.full {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--text); 
+  background-color: var(--base);
+}
+::selection { background-color: var(--peach); color: var(--base);}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1 { font-size: 2.7rem; margin: 0.1rem; }
+h2 { font-size: 1.9rem; margin: 0.1rem; }
+h3 { font-size: 1.75rem; margin: 0.1rem; }
+h4 { font-size: 1.6rem; margin: 0.1rem; }
+h5 { font-size: 1.5rem; margin: 0.1rem; }
+h6 { font-size: 1.25rem; margin: 0.1rem; }
+.text-smol { font-size: 0.75rem; }
+.text-small { font-size: 1rem; }
+.text-normal { font-size: 1.15rem; }
+.heading-smol { font-size: 1.25rem; }
+.heading-small { font-size: 1.5rem; }
+.heading-medium { font-size: 1.75rem; }
+.heading-big { font-size: 2rem; }
+.heading-large { font-size: 2.5rem; }
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+    color: var(--peach);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.4s, color 0.4s;
+}
+
+a:hover {
+    color: var(--peach);
+    border-bottom: 2px solid var(--peach);
+}
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: var(--mantle);
+  border: 1px solid var(--surface1);
+  border-radius: 4px; 
+}
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; 
+  overflow: auto; 
+}
+code a { border: none !important;}
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--surface1); 
+}
+th:first-child, td:first-child { padding-left: 0; }
+th:last-child, td:last-child { padding-right: 0; }
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; 
+}
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.u-pull-right { float: right; }
+.u-pull-left { float: left; }
+.u-align-left { text-align: left; }
+.u-align-right { text-align: right; }
+.u-align-center { text-align: center; }
+.u-ns {user-select: none;}
+.u-paper {
+    margin: 40px auto;
+    max-width: 750px;
+    padding: 0 10px;
+}
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid var(--surface1); }
+ul { list-style: disc inside; }
+ol { list-style: decimal inside; }
+
+/* Cards
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card {
+    background-color: var(--mantle);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(17, 17, 27, 20);
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(17, 17, 27, 0.4);
+}
+.card li {text-align: left;}
+
+/* Tooltips
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: var(--surface0);
+    color: var(--text);
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Navbar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.navbar {
+  background-color: var(--mantle);
+  overflow: hidden;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 7px rgba(17, 17, 27, 20);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.navbar:hover {
+  transform: translateY(-5px);
+}
+
+.navbar img.logo {
+  height: 46px;
+  width: 50px;
+  margin-right: 0px;
+}
+
+.navbar a {
+  display: block;
+  color: var(--text);
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: none;
+}
+
+.navbar a:hover {
+  background-color: var(--text);
+  color: var(--mantle);
+  border-bottom: none;
+}
+
+.navbar a.active {
+  background-color: var(--peach);
+  color: var(--mantle);
+  border-bottom: none;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar a.icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navbar.responsive {
+    position: relative;
+    flex-direction: column;
+  }
+
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .navbar.responsive .logo {
+    display: none;
+  }
+
+  .navbar.responsive a {
+    display: block;
+    text-align: left;
+    margin: 5px;
+    border-radius: 24px;
+    float: none;
+    transition: none;
+  }
+}
+
+
+/* harold
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+main {
+  padding: 3rem 0rem;
+}
+
+aside {
+  color: var(--subtext0);
+
+}

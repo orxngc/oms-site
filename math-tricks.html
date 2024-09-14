@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Engineering Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/d18c7751b3.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="u-paper">
+
+    <header>
+        <nav class="navbar" id="navbar">
+            <img src="logo.png" alt="" class="logo">
+            <a href="index.html">Home</a>
+            <a href="math-tricks.html" class="active">Math Tricks</a>
+            <a href="introduction-to-AI.html">Introduction to AI</a>
+            <a href="javascript:void(0);" class="icon" onclick="navbarButton()"> <i class="fa fa-bars"></i> </a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="heading-small u-align-center">title uwu</h1>
+        <!-- section one -->
+        <section class="grid-container halves">
+            <article class="card">section one left</article>
+            <article class="card">section one right</article>
+        </section>
+
+        <!-- section two -->
+        <section class="grid-container halves">
+            <article class="card">section two left</article>
+            <article class="card">section two right</article>
+        </section>
+
+        <!-- section three -->
+        <section class="grid-container halves">
+            <article class="card">section three left</article>
+            <article class="card">section three right</article>
+        </section>
+
+        <!-- section four -->
+        <section class="grid-container halves">
+            <article class="card">section four left</article>
+            <article class="card">section four right</article>
+        </section>
+
+        <!-- section five -->
+        <section class="grid-container halves">
+            <article class="card">section five left</article>
+            <article class="card">section four right</article>
+        </section>
+    </main>
+
+    <script>
+        function navbarButton() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
+        } 
+    </script>
+</body>
+
+</html>
